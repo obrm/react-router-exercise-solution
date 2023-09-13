@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 
 const SharedLayout = ({ user }) => {
@@ -8,7 +7,7 @@ const SharedLayout = ({ user }) => {
       <header>
         <h1>Welcome to Our WebApp</h1>
         <div className="header-right">
-          <span>Hello, {user.name}</span>
+          {user && <span>Hello, {user.name}</span>}
         </div>
       </header>
       <nav>
@@ -18,19 +17,17 @@ const SharedLayout = ({ user }) => {
               to="/"
               className={({ isActive }) => isActive ? 'active' : undefined}
             >Home</NavLink>
-          </li>          
-          {user && (
-            <li>
-              <NavLink
-                to="/add"
-                className={({ isActive }) => isActive ? 'active' : undefined}
-              >Add Product</NavLink>
-            </li>
-          )}          
+          </li>
+          <li>
+            <NavLink
+              to="/add"
+              className={({ isActive }) => isActive ? 'active' : undefined}
+            >Add Product</NavLink>
+          </li>
         </ul>
       </nav>
       <main>
-        <Outlet /> 
+        <Outlet />
       </main>
       <footer>
         <p>All Rights Reserved</p>
@@ -40,3 +37,5 @@ const SharedLayout = ({ user }) => {
 };
 
 export default SharedLayout;
+
+

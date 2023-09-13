@@ -42,11 +42,7 @@ const routes = [
             element: <ProtectedRoute user={user}><EditProduct /></ProtectedRoute>,
           },
         ],
-      },
-      {
-        path: 'not-found',
-        element: <NotFound />,
-      },
+      },     
       {
         path: '*',
         element: <NotFound />,
@@ -56,13 +52,10 @@ const routes = [
 ];
 
 const App = () => {
-
   const router = createBrowserRouter(routes);
 
   return (
-    <RouterProvider router={router}>
-      <div className='container'></div>
-    </RouterProvider>
+    <RouterProvider router={router} />    
   );
 };
 export default App;

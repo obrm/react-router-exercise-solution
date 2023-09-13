@@ -25,7 +25,7 @@ const EditProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/`);
+    navigate(`/products/${productId}`);
   };
 
   return (
