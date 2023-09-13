@@ -202,6 +202,11 @@ textarea {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.nav-links a.active {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
 .nav-links a:hover {
   background-color: var(--primary-color);
   color: white;

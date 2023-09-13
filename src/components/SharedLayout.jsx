@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 
 const SharedLayout = ({ user }) => {
 
@@ -14,16 +14,19 @@ const SharedLayout = ({ user }) => {
       <nav>
         <ul className="nav-links">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => isActive ? 'active' : undefined}
+            >Home</NavLink>
           </li>          
           {user && (
             <li>
-              <Link to="/add">Add Product</Link>
+              <NavLink
+                to="/add"
+                className={({ isActive }) => isActive ? 'active' : undefined}
+              >Add Product</NavLink>
             </li>
-          )}
-          <li>
-            <Link to="/">Products</Link>
-          </li>
+          )}          
         </ul>
       </nav>
       <main>
