@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children, user }) => {
   }, [navigate, user]);
 
   // If the user is authenticated, render the children components
-  return <>{children}</>;
+  return children;
 };
 
 export default ProtectedRoute;
