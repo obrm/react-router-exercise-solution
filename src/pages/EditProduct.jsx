@@ -5,6 +5,7 @@ import { products } from '../mock/mockData';
 
 const EditProduct = () => {
   const { productId } = useParams();
+
   const navigate = useNavigate();
 
   const product = products.find(p => p.id === parseInt(productId));

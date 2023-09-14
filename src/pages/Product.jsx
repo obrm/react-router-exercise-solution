@@ -1,8 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 
 const Product = ({ products }) => {
-
-
   const { productId } = useParams();
  
   const product = products.find(p => p.id === parseInt(productId)); 
